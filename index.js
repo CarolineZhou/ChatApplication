@@ -26,9 +26,9 @@ app.use(express.static(path.join(__dirname, '..', 'build')));
 // // serving different folder content
 app.use(express.static('public'));
 // for client side routing
-// app.use((req, res, next) => {
-//   res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
-// });
+app.use((req, res, next) => {
+  res.sendFile(path.join(__dirname, '..', 'build', 'index.html'));
+});
 
 io.on('connection', (socket) => {
   console.log(`client connected: ${socket.id}`);

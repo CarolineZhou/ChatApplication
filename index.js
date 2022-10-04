@@ -20,7 +20,7 @@ const nameList = new Set([]);
 app.use(cors());
 // creating a path for the build folder to be located outside of the backend folder
 // ensure the build folder is loaded first
-app.use(express.static(path.join(__dirname, '..', 'build')));
+app.use(express.static(path.join(__dirname, '.', 'build')));
 // // 1. Inform express.js to serve all the files from public folder
 // // 2. It is possible to have multiple express.static methods for
 // // serving different folder content
